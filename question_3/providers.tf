@@ -8,6 +8,9 @@ terraform {
 }
 
 provider "google" {
-  # Configuration options
-
+  project = var.project
+  region  = var.region
+  zone    = var.zone
 }
+
+
