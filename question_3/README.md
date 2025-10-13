@@ -1,4 +1,4 @@
-Prerequisites
+# Prerequisites
 
 Terraform: v1.3.0 or later
 
@@ -8,12 +8,12 @@ GCP Project: with billing enabled
 
 Permissions: Service account or user with Editor or equivalent permissions during provisioning
 
-Authentication setup
+# Authentication setup
 
 gcloud auth application-default login
 gcloud config set project <your-gcp-project-id>
 
-Provider configuration
+# Provider configuration
 
 provider "google" {
   project = var.project
@@ -22,22 +22,22 @@ provider "google" {
 }
 
 
-How to Run
+# How to Run
 
-# 1. Initialize providers and modules
+1. Initialize providers and modules
 terraform init
 
-# 2. Preview the plan
+2. Preview the plan
 terraform plan -out=tfplan
 
-# 3. Apply changes (deploy)
+3. Apply changes (deploy)
 terraform apply tfplan
 
-# 4. Destroy when done (cleanup)
+4. Destroy when done (cleanup)
 terraform destroy -auto-approve
 
 
-Sample terraform.tfvars
+# Sample terraform.tfvars
 
 project = "my-gcp-project-id"
 region  = "us-central1"
@@ -48,7 +48,7 @@ instance_count = 2
 db_tier = "db-f1-micro"
 
 
-Architecture Overview
+# Architecture Overview
 
 Components
 
@@ -67,7 +67,7 @@ GCS Bucket — logs / artifacts with versioning and blocked public access
 IAP — secure admin access without SSH exposure
 
 
-Module Layout
+# Module Layout
 
 | Module       | Path              | Description                                 |
 | ------------ | ----------------- | ------------------------------------------- |
@@ -79,7 +79,7 @@ Module Layout
 | **Security** | inline            | IAM, firewall, service accounts, IAP access |
 
 
-Expected Terraform Outputs
+# Expected Terraform Outputs
 
 Outputs:
 
@@ -90,7 +90,7 @@ logs_bucket               = "gcp-webstack-logs-my-gcp-project-dev"
 vpc_id                    = "gcp-webstack-dev-vpc"
 
 
-Design Choices & Trade-offs
+# Design Choices & Trade-offs
 
 This was designed to test in GCP Free tier but can easily be more production ready by adding instances and uncommenting the load balancer sections.  
 I did not test the LB because I did not want to incur charges. I did change the default instances back to 2 but I tested with only 1. 
