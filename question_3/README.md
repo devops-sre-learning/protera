@@ -26,19 +26,19 @@ provider "google" {
 
 1. Initialize providers and modules:
 
-terraform init
+    terraform init
 
 2. Preview the plan:
 
-terraform plan -out=tfplan
+    terraform plan -out=tfplan
 
 3. Apply changes (deploy):
 
-terraform apply tfplan
+    terraform apply tfplan
 
 4. Destroy when done (cleanup):
 
-terraform destroy -auto-approve
+    terraform destroy -auto-approve
 
 
 # Sample terraform.tfvars
