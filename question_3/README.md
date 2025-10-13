@@ -24,16 +24,20 @@ provider "google" {
 
 # How to Run
 
-1. Initialize providers and modules
+1. Initialize providers and modules:
+
 terraform init
 
-2. Preview the plan
+2. Preview the plan:
+
 terraform plan -out=tfplan
 
-3. Apply changes (deploy)
+3. Apply changes (deploy):
+
 terraform apply tfplan
 
-4. Destroy when done (cleanup)
+4. Destroy when done (cleanup):
+
 terraform destroy -auto-approve
 
 
