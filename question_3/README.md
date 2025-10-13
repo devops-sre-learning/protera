@@ -93,7 +93,7 @@ vpc_id                    = "gcp-webstack-dev-vpc"
 Design Choices & Trade-offs
 
 This was designed to test in GCP Free tier but can easily be more production ready by adding instances and uncommenting the load balancer sections.  
-I did not test the LB because I did not want to incur charges. 
+I did not test the LB because I did not want to incur charges. I did change the default instances back to 2 but I tested with only 1. 
 
 
 | Area          | Choice                     | Trade-off                                       |
